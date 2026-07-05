@@ -33,5 +33,7 @@ ii) Add the MariaDB credentials for industrial data storage and phpmyadmin acces
         Password: datadrivendigitaltwin
 
 ## Remark
-You may need to bypass SSL certificate verification when opening the web interfaces to access the Human-Machine Interface (HMI).
-This is not a security risk; it is due to the SSL certificate being configured only for my specific domain name.
+You may need to bypass SSL certificate verification when opening the web interfaces to access the Human-Machine Interface (HMI). This is not a security risk; 
+it is due to the SSL certificate being configured only for my specific domain name. 
+This only affects HTTPS access to the HMI and the browser's certificate validation, 
+and does not affect the end-to-end data confidentiality of the transmitted data ensured by the OPC UA protocol.
