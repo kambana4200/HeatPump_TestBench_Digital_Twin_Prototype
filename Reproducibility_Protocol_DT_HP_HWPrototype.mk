@@ -19,7 +19,7 @@ microK8s kubectl apply -f DataDrivenDT_deployement.yaml
 
 1) Open the Node-RED flow using the URL: https://yourPublicIP:1880/
 
-2) Imperative Modification inside Node-RED flow:
+2) Imperative Modifications inside Node-RED flow:
 
 i) Update the public IP address used in the OPC UA endpoint in the Node-RED flow
 ii) Add the MariaDB credentials for industrial data storage and phpmyadmin access (only local acess allowed):
