@@ -16,7 +16,7 @@ spec:
       hostname: dthphwproto  # must match to the OPC-UA TLS certificate altname within the container
       containers:
         - name: dt-1
-          image: andringitra/dt-debianlinux:4.0
+          image: ampandroa/datadrivendigitaltwin:6.0
           imagePullPolicy: IfNotPresent
           ports:
             - name: nodered
