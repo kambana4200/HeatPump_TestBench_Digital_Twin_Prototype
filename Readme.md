@@ -1,6 +1,8 @@
-### INDUSTRIAL CONTROL SYSTEM (ICS) APPLICATION WITH ITS SYNCHRONISATION LAYER FOR THE DIGITAL TWIN PLATFORM
+# Reproducibility Protocol for DT_HP_HWPrototype
 
-# Software Requirements
+## INDUSTRIAL CONTROL SYSTEM (ICS) APPLICATION WITH ITS SYNCHRONISATION LAYER FOR THE DIGITAL TWIN PLATFORM
+
+### Software Requirements
 
 1. Install LabVIEW 2025 Q3 (32-bit or 64-bit)
 
@@ -17,7 +19,7 @@ pip install keyboard
 pip install cryptography
 ```
 
-#Required Files
+### Required Files
 
 1. The following files are required to establish secure OPC UA communication:
 
@@ -28,7 +30,7 @@ pip install cryptography
 
 - ValueSpace.csv
 
-##  Deployment Synchronization Layer Leveraging OPC UA protocol
+### Deployment Synchronization Layer Leveraging OPC UA protocol
 
 To enable communication between the Industrial Control System (ICS) and the **DT_HW_HP_Prototype**, an OPC UA server must be hosted on a computer equipped with:
 A public IP address with port forwarding enabled; or A VPN providing a dedicated public IP address with port forwarding enabled.
@@ -41,7 +43,7 @@ A public IP address with port forwarding enabled; or A VPN providing a dedicated
 python OPC_UA_StartServer.py
 ```
 
-## Deployment of the Industrial Control System (ICS)
+### Deployment of the Industrial Control System (ICS)
 
 The ICS application continuously supplies the **DT_HW_HP_Prototype** with industrial process data. It can also simulate control command exchanges in offline mode or transmit real control setpoints when the physical heat pump test bench is connected through the serial interface and the NI-DAQ acquisition hardware.
 
@@ -50,21 +52,23 @@ The ICS application continuously supplies the **DT_HW_HP_Prototype** with indust
 2. From the LabVIEW menu, select: Window => Show Block Diagram
 
 3. Verify that the configured Python interpreter points to the installed Python 3.9.13 executable as shown on the picture below.
+   <img width="1917" height="1007" alt="capture_1" src="https://github.com/user-attachments/assets/2da4dcf8-968d-4e6a-aad9-ccfcfd803a66" />
 
-4. Verify that the path to the Python script **OPC_UA_DT_Server_Simulator.py** is correctly configured within the LabVIEW block diagram as shown on the picture below.
+5. Verify that the path to the Python script **OPC_UA_DT_Server_Simulator.py** is correctly configured within the LabVIEW block diagram as shown on the picture below.
+   <img width="1912" height="1017" alt="capture_2" src="https://github.com/user-attachments/assets/7a6d9e0a-608b-4f71-8abf-6f2ac3da1053" />
 
-5. Start the Industrial Control System application by clicking the Run (Play) button in LabVIEW.
+7. Start the Industrial Control System application by clicking the Run (Play) button in LabVIEW.
 
-## Remarks No.1
+### Remarks No.1
 
 - The computer hosting the OPC UA server must remain reachable from the Internet throughout the experiment.
 - If no physical heat pump test bench is connected, the ICS application operates with industrial data flow retained inside the file **ValueSpace.csv** while maintaining the complete Digital Twin synchronization workflow.
 - When the physical equipment is connected, the same application transparently switches to real-time operation, exchanging industrial measurements and control setpoints with the Digital Twin through the secure OPC UA communication channel.
 
 
-### REPLICATION OF THE DATA-DRIVEN DIGITAL TWIN (DT) CLOUD PLATFORM NAMED DT_HW_HP_Prototype
+## REPLICATION OF THE DATA-DRIVEN DIGITAL TWIN (DT) CLOUD PLATFORM NAMED DT_HW_HP_Prototype
 
-## Platform Installation
+### Platform Installation
 
 1. Install Docker 28.4.0 on a remote Server or a remote Virtual Private (VPS) or remote Baremetal Server 
 
@@ -81,7 +85,7 @@ microK8s start
 microK8s kubectl apply -f DataDrivenDT_deployement.yaml
 ```
 
-## How to run and use the DT_HW_HP_Prototype
+### How to run and use the DT_HW_HP_Prototype
 
 1. Open the Node-RED flow using the URL: https://yourPublicIP:1880/
 
@@ -98,6 +102,6 @@ ii. Add the MariaDB credentials for industrial data storage and phpmyadmin acces
         Login: datadrivendigitaltwin
         Password: datadrivendigitaltwin
 
-## Remark No.2
+### Remark No.2
 You may need to bypass SSL certificate verification when opening the web interfaces to access the Human-Machine Interface (HMI).
 This is not a security risk; it is due to the SSL certificate being configured only for my specific domain name.
