@@ -79,7 +79,7 @@ Install the following software components:
 
 1. Docker **v28.4.0** (or a compatible version).
 
-2. MicroKubernetes (MicroK8s) **v1.33.13** (or an equivalent Kubernetes distribution).
+2. MicroKubernetes (**MicroK8s**) **v1.33.13** (or an equivalent Kubernetes distribution).
 
 3. Configure the server firewall (e.g., ufw, iptables, or any equivalent firewall) to allow inbound and outbound traffic on the following ports:
 
