@@ -6,7 +6,7 @@ from datetime import datetime
 import csv
 import keyboard
 import os
-import ipaddress
+import re
 
 #Global variable declaration
 ENDPOINT = "opc.tcp://0.0.0.0:4840/"
@@ -19,6 +19,29 @@ def configure_connection_parameters():
     global CERTIFICATE
     global PRIVATE_KEY
     global INDUSTRIAL_DATA_FLOW
+    global ENDPOINT
+
+    
+    # IPv4 address
+    while True:
+
+        ip = input(
+            "Enter the PUBLIC DEDICATED IPv4 address of your PC (neitheir extern NAT address or Dynamic VPN address isn't working): "
+        ).strip()
+
+        ipv4_regex = r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+
+        if not re.match(ipv4_regex, ip):
+            print("Invalid IPv4 address. Please enter a valid IPv4 address.")
+            continue
+
+        ENDPOINT = ip
+
+        print(f"IPv4 address configured:\n{ENDPOINT}")
+        break
 
     # Certificate (.der)
     while True:
@@ -94,7 +117,7 @@ class GestionSouscription():
 def launch_server():
 
     server = Server()
-    server.set_endpoint(ENDPOINT)
+    server.set_endpoint("opc.tcp://0.0.0.0:4840/")
     # configure security layer for OPC UA Serveur / client with TLS
     server.set_security_policy([ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt])
     # public key  for encrytion
