@@ -4,7 +4,7 @@
 
 ### Software Requirements
 
-1. Install LabVIEW 2025 Q3 (32-bit or 64-bit)
+1. Install LabVIEW 2026 Q1 Community Edition (32-bit or 64-bit)
 
 2. Install Python 3.X.X:
    - Use the 32-bit version if LabVIEW is 32-bit.
@@ -48,16 +48,14 @@ python OPC_UA_StartServer.py
 The ICS application continuously supplies the **DT_HW_HP_Prototype** with industrial process data. It can also simulate control command exchanges in offline mode or transmit real control setpoints when the physical heat pump test bench is connected through the serial interface and the NI-DAQ acquisition hardware.
 
 1. Open the following LabVIEW project nammed: HP_testbench_SCADA_application.vi (file provided on this github)
+   Please set the this VI as "trusted" when executing this labview virtual interface in order to launch it properly. 
 
-2. From the LabVIEW menu, select: Window => Show Block Diagram
+3. From the LabVIEW menu, select: Window => Show Block Diagram
 
-3. Verify that the configured Python interpreter points to the installed Python 3.9.13 executable as shown on the picture below.
+4. Verify that the configured Python interpreter points to the installed Python 3.9.13 executable as shown on the picture below.
    <img width="1917" height="1007" alt="capture_1" src="https://github.com/user-attachments/assets/2da4dcf8-968d-4e6a-aad9-ccfcfd803a66" />
 
-5. Verify that the path to the Python script **OPC_UA_DT_Server_Simulator.py** is correctly configured within the LabVIEW block diagram as shown on the picture below.
-   <img width="1912" height="1017" alt="capture_2" src="https://github.com/user-attachments/assets/7a6d9e0a-608b-4f71-8abf-6f2ac3da1053" />
-
-7. Start the Industrial Control System application by clicking the Run (Play) button in LabVIEW.
+5. Start the Industrial Control System application by clicking the Run button (=>) in LabVIEW.
 
 ### Remarks No.1
 
