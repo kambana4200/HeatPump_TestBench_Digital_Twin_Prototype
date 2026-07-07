@@ -9,10 +9,10 @@ import os
 import re
 
 #Global variable declaration
-ENDPOINT = "opc.tcp://127.0.0.1:4840/"
-CERTIFICATE = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\digitaltwincert.der'
-PRIVATE_KEY = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\key2.pem'
-INDUSTRIAL_DATA_FLOW = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\valuespace.csv'
+ENDPOINT = ""
+CERTIFICATE = ''
+PRIVATE_KEY = ''
+INDUSTRIAL_DATA_FLOW = ''
 SEUIL_AEROTHERME = 35 #in degree Celcius
 
 def configure_connection_parameters():
@@ -22,6 +22,27 @@ def configure_connection_parameters():
     global ENDPOINT
 
     
+    # IPv4 address
+    while True:
+
+        ip = input(
+            "Enter only either the internal IPv4 address of your Dedicated VPN or the internal NAT IPv4 address from your internet provider "
+        ).strip()
+
+        ipv4_regex = r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
+                    r"(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+
+        if not re.match(ipv4_regex, ip):
+            print("Invalid IPv4 address. Please enter a valid IPv4 address.")
+            continue
+
+        ENDPOINT = "opc.tcp://"+ ip +":4840/"
+        
+        print(f"IPv4 address configured:\n{ENDPOINT}")
+        break
+
     # Certificate (.der)
     while True:
 
