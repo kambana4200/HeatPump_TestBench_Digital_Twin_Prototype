@@ -94,7 +94,7 @@ ii. Add the MariaDB credentials for industrial data storage and phpmyadmin acces
     Login: prototype
     Password: Yannick
 
-3. Access the virtual replica of the heat pump test bench hot water cycle using: https://yourPublicIP:18180/dashboard
+3. Access the virtual replica of the heat pump test bench hot water cycle using: https://yourPublicIP:1880/dashboard
     
     Authentication Credentials (All tabs): 
         Login: datadrivendigitaltwin
