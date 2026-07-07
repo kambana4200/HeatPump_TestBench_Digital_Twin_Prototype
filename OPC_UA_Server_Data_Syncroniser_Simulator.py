@@ -38,8 +38,8 @@ def configure_connection_parameters():
             print("Invalid IPv4 address. Please enter a valid IPv4 address.")
             continue
 
-        ENDPOINT = ip
-
+        ENDPOINT = "opc.tcp://"+ ip +":4840/"
+        
         print(f"IPv4 address configured:\n{ENDPOINT}")
         break
 
@@ -117,7 +117,7 @@ class GestionSouscription():
 def launch_server():
 
     server = Server()
-    server.set_endpoint("opc.tcp://0.0.0.0:4840/")
+    server.set_endpoint(ENDPOINT)
     # configure security layer for OPC UA Serveur / client with TLS
     server.set_security_policy([ua.SecurityPolicyType.Basic256Sha256_SignAndEncrypt])
     # public key  for encrytion
