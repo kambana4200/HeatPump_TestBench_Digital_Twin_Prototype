@@ -48,7 +48,7 @@ python OPC_UA_StartServer.py
 The ICS application continuously supplies the **DT_HW_HP_Prototype** with industrial process data. It can also simulate control command exchanges in offline mode or transmit real control setpoints when the physical heat pump test bench is connected through the serial interface and the NI-DAQ acquisition hardware.
 
 1. Open the following LabVIEW project nammed: HP_testbench_SCADA_application.vi (file provided on this github)
-   Please set the this VI as "trusted" when executing this labview virtual interface in order to launch it properly. 
+   Please set the this VI as "trusted" when executing this labview Virtual Instrument in order to launch it properly. 
 
 3. From the LabVIEW menu, select: Window => Show Block Diagram
 
