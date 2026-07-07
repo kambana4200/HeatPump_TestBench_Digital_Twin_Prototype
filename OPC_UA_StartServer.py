@@ -9,31 +9,16 @@ import os
 import ipaddress
 
 #Global variable declaration
-ENDPOINT = "opc.tcp://10.34.0.81:4840/" #Public IP of the server
+ENDPOINT = "opc.tcp://0.0.0.0:4840/"
 CERTIFICATE = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\digitaltwincert.der'
 PRIVATE_KEY = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\key2.pem'
 INDUSTRIAL_DATA_FLOW = 'C:\\Users\\utilisateur\\Documents\\python_OPC_UA_SERVER\\DT_Server_SIMULATOR\\certificate\\valuespace.csv'
 SEUIL_AEROTHERME = 35 #in degree Celcius
 
 def configure_connection_parameters():
-    global ENDPOINT
     global CERTIFICATE
     global PRIVATE_KEY
     global INDUSTRIAL_DATA_FLOW
-
-    # Public IP Address
-    while True:
-        ip = input("Enter the public IP address of the OPC UA Server: ").strip()
-
-        try:
-            ipaddress.ip_address(ip)
-
-            ENDPOINT = f"opc.tcp://{ip}:4840/"
-            print(f"Endpoint configured: {ENDPOINT}")
-            break
-
-        except ValueError:
-            print("Invalid IP address. Please enter a valid IPv4 or IPv6 address.")
 
     # Certificate (.der)
     while True:
