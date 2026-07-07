@@ -4,13 +4,14 @@
 
 ### Software Requirements
 
-1. Install LabVIEW 2026 Q1 Community Edition (32-bit or 64-bit)
+1. Install LabVIEW 2022 Q2 Community Edition (32-bit or 64-bit)
+   Suggestion to download this version in the context of this DT prototype through this site https://rahim-soft.com/ni-labview-2022-q3-free-download/
 
-2. Install Python 3.X.X:
+3. Install Python 3.X.X:
    - Use the 32-bit version if LabVIEW is 32-bit.
    - Use the 64-bit version if LabVIEW is 64-bit.
 
-3. Install the required Python packages with pip using the following commands:
+4. Install the required Python packages with pip using the following commands:
 
 ```bash
 pip install opcua
