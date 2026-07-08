@@ -26,7 +26,7 @@ def configure_connection_parameters():
     while True:
 
         ip = input(
-            "Enter only either the internal IPv4 address of your Dedicated VPN or the internal NAT IPv4 address from your internet provider "
+            "Enter only either the internal IPv4 address of your Dedicated VPN or the internal NAT IPv4 address from your internet provider : "
         ).strip()
 
         ipv4_regex = r"^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\." \
