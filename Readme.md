@@ -117,7 +117,9 @@ https://<Your_Public_IP>:1880/
 
 Within the Node-RED flow:
 
-- update the OPC UA endpoint by replacing the default IP address with the public IP address of the OPC UA server hosting the simulated (or physical) ICS;
+- update the OPC UA endpoint by replacing the default IP address with the public IP address of the OPC UA server hosting the simulated ICS i.e the PC wich you launched the OPC_UA_Server_Data_Synchroniser_Simulator.py as shown in the figure below:
+  <img width="868" height="815" alt="capture_3" src="https://github.com/user-attachments/assets/9b664491-e775-4852-9b05-098756bb9222" />
+
 - configure the MariaDB connection by providing the database credentials used for industrial data storage.
 
 Database credentials:
