@@ -242,7 +242,7 @@ def update_data_server(aquired_current, ambiant_temperature, mixing_cycle_flowra
         node_id_TempOutChaud = "ns=2;i=20"
         node_id_TempOutFroid = "ns=2;i=21"
         node_id_SetPointInChaudAquis = "ns=2;i=22"
-        node_id_ProcessValue = "ns=2;i=24"
+        node_id_ProcessValue = "ns=2;i=23"
 
         #Write new value each t= 1s
         client.get_node(node_id_OutHeatExchanger).set_value(OUTHEATEXCHANGER)
